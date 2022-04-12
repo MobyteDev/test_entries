@@ -39,16 +39,10 @@ class LoginPage extends ConsumerWidget {
             TextButton(
               child: const Text('Нет аккаунта'),
               onPressed: () {
-                 ref.read(counterController);
+                 ref.read(counterController.notifier).add();
               },
             ),
-            Consumer(
-              builder: (context, ref, child) {
-                return Text(
-                    // ref.watch(counterController).state.toString(),
-                    ref.watch(counterController.state).state.toString());
-              },
-            ),
+            Text(ref.watch(counterController).toString()),
           ],
           mainAxisAlignment: MainAxisAlignment.center,
         ),

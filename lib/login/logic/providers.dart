@@ -6,7 +6,7 @@ import 'package:test_entries/login/logic/database.dart';
 // });
 
 final counterController =
-    StateProvider<int>((ref) => 0);
+    StateNotifierProvider<CounterNotifier, int>((ref) => CounterNotifier());
 
 class CounterNotifier extends StateNotifier<int> {
   CounterNotifier() : super(0);
